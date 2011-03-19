@@ -10,4 +10,6 @@ describe Feed do
   
   its(:url) { should == "http://feeds.feedburner.com/SecouchermoinsbetefrAnecdotes" }
   
+  its(:selector) { should == '#content .mainBlock .blockMiddle' }
+  
 end
