@@ -1,13 +1,15 @@
 class FeedsController < ApplicationController
   
   def show
-    if params[:id] == 'custom'
+    if params[:id] =~ /^custom(\.\d+)?/
       @feed = Feed.new(params.slice(:url, :selector))
     else
       @feed = Feed.find_by_name!(params[:id])
     end
     respond_to do |format|
       format.rss{ render :text => expand_feed }
+      format.xml{ render :text => expand_feed }
+      format.html{ render :text => expand_feed }
     end
   end
   
