@@ -6,7 +6,9 @@ class FeedsController < ApplicationController
     else
       @feed = Feed.find_by_name!(params[:id])
     end
-    render :text => expand_feed
+    respond_to do |format|
+      format.rss{ render :text => expand_feed }
+    end
   end
   
   protected
