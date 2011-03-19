@@ -1,0 +1,5 @@
+secouchermoinsbete:
+  id: 1
+  name: secouchermoinsbete.fr
+  url: http://feeds.feedburner.com/SecouchermoinsbetefrAnecdotes
+  selector: body
