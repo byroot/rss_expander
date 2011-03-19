@@ -1,5 +1,9 @@
 class FeedsController < ApplicationController
   
+  def index
+    redirect_to 'https://github.com/byroot/rss_expander'
+  end
+  
   def show
     if params[:id] =~ /^custom(\.\d+)?/
       @feed = Feed.new(params.slice(:url, :selector))
